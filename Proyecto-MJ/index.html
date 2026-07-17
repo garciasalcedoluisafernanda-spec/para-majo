@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Majo ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Pantalla de inicio -->
+    <div id="inicio" class="pantalla">
+
+        <h1>❤️ Para la niña que cambió mi vida ❤️</h1>
+
+        <p>
+            Hay personas que llegan a nuestra vida...
+            y otras que se convierten en nuestro hogar.
+        </p>
+
+        <button id="empezar">
+            Comenzar ✨
+        </button>
+
+    </div>
+
+    <!-- Galería -->
+    <div id="galeria" class="pantalla oculto">
+
+        <img
+            id="foto"
+            src="fotos/foto1.jpeg"
+            alt="Nuestra foto"
+            width="350"
+        >
+
+        <h2 id="frase"></h2>
+
+        <button id="siguiente">
+            Siguiente ❤️
+        </button>
+
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤️";
+
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+<!-- Tus fotos y mensajes -->
+
+<div id="historia">
+   <!-- aquí está todo lo que ya hiciste -->
+</div>
+
+
+<!-- Botón de música -->
+<audio id="musica" loop>
+    <source src="musica/cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('musica').play()">
+    ❤️ Reproducir nuestra canción ❤️
+</button>
+
+
+
+</body>
+</html>
